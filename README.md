@@ -1,6 +1,8 @@
- # English → Yoruba Neural Machine Translation
+ # English → Yoruba Neural Machine Translation (NLLB-600M)
 
+## PROJECT OVERVIEW
 This project explores neural machine translation from **English to Yoruba**, a low-resource language. The dataset of Menyo20k and Mafand(eng-yor) contains too few aligned examples to reliably train a custom translation model from scratch. With limited data, a model with substantial capacity can memorize the training examples instead of learning general translation patterns which we show in our notebooks.
+
 
 ## Approach
 
@@ -13,6 +15,7 @@ The workflow is:
 3. Fine-tune the pretrained NLLB model on the translation pairs.
 4. Evaluate progress with BLEU and inspect generated translations.
 5. Serve the trained model through an HTML interface for interactive testing.
+6. 
 
 ## Results and current status
 
@@ -30,7 +33,12 @@ The model has also been deployed to an HTML page for interactive inference. Feel
 - The small dataset increases the risk of memorization and limits evaluation reliability.
 - BLEU is only one measure of translation quality and does not fully capture fluency, meaning, or cultural context.
 - Running and fine-tuning NLLB may require more memory and compute than a standard local environment provides.
+- Yoruba remains structurally underrepresented in public web-scraped corpuses, making high-quality token Validation an ongoing data engineering challenge.
+- VRAM Bottlenecks: Standard local inference loops on legacy consumer machines face significant latency issues; deployment requires optimized inference engines to operate at acceptable token-per-second generation speeds.
+  
 
-This is an ongoing effort toward a more capable English–Yoruba translation system.
+Link to test it out: The website will be published on the web once I handle the inference compute bottleneck of the current laptop im using probably using Ctranslate or Hugging Face
+ spaces
+ This is an ongoing effort toward a more capable English–Yoruba translation system.
 
 
